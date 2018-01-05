@@ -1,3 +1,4 @@
+/* pages/search/search.wxss */
 page {
   display: flex;
   flex-direction: column;
@@ -61,8 +62,8 @@ page {
 }
 
 .list .item .meta .sub-title {
-  font-size: 22rpx;
-  color: #c0c0c0;
+  font-size: 24rpx;
+  color: #999;
 }
 
 .list .item .meta .artists {
