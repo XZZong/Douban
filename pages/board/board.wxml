@@ -1,32 +1,30 @@
-<swiper indicator-dots="true" autoplay="true" interval="8000" duration="1000" style='height: 480rpx;'>
-  <swiper-item>
+<!--pages/border/border.wxml-->
+<swiper indicator-dots='true' autoplay='true' interval='5000' duration='1000' style='height:480rpx;'>
+  <swiper-item wx:for="{{ boards[0].movies }}" wx:key="id">
     <navigator url="../item/item">
-      <image src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2380677316.jpg" mode="aspectFill"/>
+      <image src="{{ item.images.large }}" mode="aspectFill"/>
     </navigator>
-  </swiper-item>
-  <swiper-item>
-    <navigator url="../item/item">
-      <image src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2386736909.jpg" mode="aspectFill"/>
-    </navigator>
-  </swiper-item>
+  </swiper-item> 
 </swiper>
-<scroll-view class="board" scroll-y="true">
-  <navigator url="../list/list">
-    <view class="board-item">
-      <text>正在热映</text>
-      <image src="../../images/arrowright.png" mode="aspectFill"/>
+<view class='board' scroll-y="true">
+  <block wx:for="{{boards}}" wx:key="key">
+    <view class='board-item'>
+      <navigator url='../list/list'>
+        <view class='title'>
+          <text>{{ item.title }}</text>
+          <image src='../../images/arrowright.png' mode='aspectFill'/>
+        </view>
+      </navigator>
+      <scroll-view class='content' scroll-x='true'>
+        <view class='inner'>
+          <navigator wx:for="{{ item.movies }}" wx:key="id" url="../item/item">
+            <view class='movie-item'>
+              <image src='{{item.images.large}}' mode='aspectFill'/>
+              <text>{{item.title}}</text>
+            </view>
+          </navigator>
+        </view>
+      </scroll-view>
     </view>
-  </navigator>
-  <navigator url="../list/list">
-    <view class="board-item">
-      <text>即将上映</text>
-      <image src="../../images/arrowright.png" mode="aspectFill"/>
-    </view>
-  </navigator>
-  <navigator url="../list/list">
-    <view class="board-item">
-      <text>TOP250</text>
-      <image src="../../images/arrowright.png" mode="aspectFill"/>
-    </view>
-  </navigator>
-</scroll-view>
+  </block>
+</view>

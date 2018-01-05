@@ -1,3 +1,4 @@
+/* pages/border/border.wxss */
 page {
   display: flex;
   flex-direction: column;
@@ -7,41 +8,57 @@ page {
   font-family: -apple-system-font, 'Helvetica Neue', Helvetica, 'Microsoft YaHei', sans-serif;
 }
 
-.container {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-.slide swiper {
-  height: 400rpx;
-}
-
-.slide image {
-  height: 400rpx;
-  width: 100%;
-}
-
 .board {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
 }
 
 .board-item {
   display: flex;
+  flex-direction: column;
   cursor: pointer;
-  border: 1rpx solid #eee;
-  margin: 40rpx;
-  padding: 40rpx;
+  font-size: 40rpx;
+  margin: 40rpx 0;
+  padding: 10rpx;
 }
 
-.board-item text {
+.board-item .title {
+  display: flex;
+  margin-bottom: 10rpx;
+  width: 100%;
+}
+
+.board-item .title text {
   flex: 1;
 }
 
-.board-item image {
+.board-item .title image {
   height: 40rpx;
   width: 40rpx;
+}
+
+.board-item .content {
+  height: 300rpx;
+}
+.board-item .content .inner {
+  display: flex;
+  flex-direction: row;
+  height: 300rpx;
+  width: 900rpx;
+}
+.board-item .content .inner .movie-item {
+  display: flex;
+  flex-direction: column;
+  width: 180rpx;
+  margin: 10rpx;
+}
+.board-item .content .inner .movie-item image {
+  width: 180rpx;
+  height: 250rpx;
+}
+.board-item .content .inner .movie-item text {
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
