@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="header">
+    <text class="title">关于</text>
+  </view>
+  <view class="user" bindtap="getUserInfo">
+    <text class="user-nickname">xzz</text>
+    <text>Hubei, China</text>
+    <text> Thanks~ </text>
+  </view>
+</view>

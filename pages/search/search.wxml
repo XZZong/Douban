@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="header">
+    <input placeholder="请输入搜索内容"/>
+  </view>
+  <scroll-view scroll-y="true" class="list">
+    <navigator url="../item/item">
+      <view class="item">
+        <image class="poster" src="https://img3.doubanio.com/view/movie_poster_cover/ipst/public/p2380677316.jpg"/>
+        <view class="meta">
+          <text class="title">湄公河行动</text>
+          <text class="sub-title">湄公河行动 (2016)</text>
+          <view class="artists">导演：<block> 林超贤 </block></view>
+        </view>
+        <view class="rating">
+          <text>8.2</text>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="../item/item">
+      <view class="item">
+        <image class="poster" src="https://img1.doubanio.com/view/movie_poster_cover/ipst/public/p2386736909.jpg"/>
+        <view class="meta">
+          <text class="title">圆梦巨人</text>
+          <text class="sub-title">The BFG (2016)</text>
+          <view class="artists">导演：<block> 史蒂文·斯皮尔伯格 </block></view>
+        </view>
+        <view class="rating">
+          <text>6.8</text>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="../item/item">
+      <view class="item">
+        <image class="poster" src="https://img1.doubanio.com/view/movie_poster_cover/ipst/public/p2382076389.jpg"/>
+        <view class="meta">
+          <text class="title">从你的全世界路过</text>
+          <text class="sub-title">从你的全世界路过 (2016)</text>
+          <view class="artists">导演：<block> 张一白 </block></view>
+        </view>
+        <view class="rating">
+          <text>5.5</text>
+        </view>
+      </view>
+    </navigator>
+  </scroll-view>
+</view>
