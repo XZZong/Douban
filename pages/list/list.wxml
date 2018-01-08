@@ -1,33 +1,4 @@
+<import src='../common/movie-list'/>
 <view class="container">
-  <view class="header">
-    <text>正在热映</text>
-  </view>
-  <scroll-view scroll-y="true" class="list">
-    <navigator url="../item/item">
-      <view class="item">
-        <image class="poster" src="https://img3.doubanio.com/view/movie_poster_cover/ipst/public/p2380677316.jpg"/>
-        <view class="meta">
-          <text class="title">湄公河行动</text>
-          <text class="sub-title">湄公河行动 (2016)</text>
-          <view class="artists">导演：<block> 林超贤 </block></view>
-        </view>
-        <view class="rating">
-          <text>8.2</text>
-        </view>
-      </view>
-    </navigator>
-    <navigator url="../item/item">
-      <view class="item">
-        <image class="poster" src="https://img1.doubanio.com/view/movie_poster_cover/ipst/public/p2386736909.jpg"/>
-        <view class="meta">
-          <text class="title">圆梦巨人</text>
-          <text class="sub-title">The BFG (2016)</text>
-          <view class="artists">导演：<block> 史蒂文·斯皮尔伯格 </block></view>
-        </view>
-        <view class="rating">
-          <text>6.8</text>
-        </view>
-      </view>
-    </navigator>
-  </scroll-view>
+  <template is='movie-list' data='{{movies, loading, hasMore}}'/>
 </view>
