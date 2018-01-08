@@ -1,10 +1,9 @@
-<view class="container">
-  <view class="header">
-    <text class="title">关于</text>
-  </view>
-  <view class="user" bindtap="getUserInfo">
-    <text class="user-nickname">xzz</text>
-    <text>Hubei, China</text>
-    <text> Thanks~ </text>
-  </view>
+<view class="header">
+  <text class="title">{{title}}</text>
+</view>
+<view class="user" bindtap="getUserInfo">
+  <image src='{{userInfo.avatarUrl}}' mode='aspectFill'/>
+  <text class="user-nickname">{{userInfo.nickName}}</text>
+  <text hidden='{{!userInfo.city}}'>{{userInfo.city}}, {{userInfo.province}}</text>
+  <text hidden='{{!userInfo.city}}'> Thanks~ </text>
 </view>
