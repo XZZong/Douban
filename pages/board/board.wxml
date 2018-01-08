@@ -1,7 +1,7 @@
 <!--pages/border/border.wxml-->
 <swiper indicator-dots='true' autoplay='true' interval='5000' duration='1000' style='height:480rpx;'>
   <swiper-item wx:for="{{ boards[0].movies }}" wx:key="id">
-    <navigator url="../item/item">
+    <navigator url="../item/item?id={{item.id}}">
       <image src="{{item.images.large}}" mode="aspectFill" style='width:100%;'/>
     </navigator>
   </swiper-item>
@@ -17,7 +17,7 @@
       </navigator>
       <scroll-view class='content' scroll-x='true'>
         <view class='inner'>
-          <navigator wx:for="{{ item.movies }}" wx:key="id" url="../item/item">
+          <navigator wx:for="{{ item.movies }}" wx:key="id" url="../item/item?id={{item.id}}">
             <view class='movie-item'>
               <image src='{{item.images.large}}' mode='aspectFill'/>
               <text>{{item.title}}</text>

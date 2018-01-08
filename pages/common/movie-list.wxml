@@ -1,5 +1,5 @@
 <template name='item1'>
-  <navigator url='../item/item'>
+  <navigator url='../item/item?id={{item.id}}'>
     <view class='item'>
       <image class='poster' src='{{item.images.small}}'/>
       <view class='meta'>
