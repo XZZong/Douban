@@ -38,12 +38,12 @@ page {
 }
 
 .board-item .content {
-  height: 300rpx;
+  height: 320rpx;
 }
 .board-item .content .inner {
   display: flex;
   flex-direction: row;
-  height: 300rpx;
+  height: 320rpx;
   width: 900rpx;
 }
 .board-item .content .inner .movie-item {

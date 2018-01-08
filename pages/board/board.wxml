@@ -2,9 +2,9 @@
 <swiper indicator-dots='true' autoplay='true' interval='5000' duration='1000' style='height:480rpx;'>
   <swiper-item wx:for="{{ boards[0].movies }}" wx:key="id">
     <navigator url="../item/item">
-      <image src="{{ item.images.large }}" mode="aspectFill"/>
+      <image src="{{item.images.large}}" mode="aspectFill" style='width:100%;'/>
     </navigator>
-  </swiper-item> 
+  </swiper-item>
 </swiper>
 <view class='board' scroll-y="true">
   <block wx:for="{{boards}}" wx:key="key">

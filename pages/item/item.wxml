@@ -1,6 +1,6 @@
 <view class="container">
   <image class="background" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2380677316.jpg" mode="aspectFill"/>
-  <scroll-view class="container" scroll-y="true">
+  <scroll-view scroll-y="true">
     <view class="meta">
       <image class="poster" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2380677316.jpg" mode="aspectFit"/>
       <text class="title">湄公河行动(2016)</text>
