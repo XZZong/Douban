@@ -2,9 +2,6 @@
 page {
   height: 100%;
 }
-.container {
-  height: 100%;
-}
 .splash {
   height: 100%;
 }
