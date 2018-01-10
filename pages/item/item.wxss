@@ -14,29 +14,83 @@ page {
   box-sizing: border-box;
 }
 
-.meta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50rpx 40rpx;
-}
-
 .poster {
   width: 100%;
   height: 800rpx;
-  margin: 20rpx;
+  margin: 16rpx;
 }
 
 .title {
   font-style: 42rpx;
   color: #222;
+  margin-left: 40rpx;
+}
+
+.meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10rpx 40rpx;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  width: 520rpx;
+  align-items: center;
 }
 
 .info {
-  font-size: 18rpx;
+  font-size: 20rpx;
   color: #444;
   margin-top: 20rpx;
   width: 80%;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #9e9e9e;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.rating .average {
+  font-size: 36rpx;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+}
+
+.rating .ratings-count {
+  font-size: 20rpx;
+}
+
+.wish-do-session {
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  padding: 30rpx;
+  font-size: 28rpx;
+  color: #de9703;
+  text-align: center;
+}
+
+.wish-do-session .wish-btn {
+  padding: 10rpx 70rpx;
+  border: 1px solid #de9703;
+  border-radius: 6rpx;
+  margin-left: 60rpx;
+  margin-right: 120rpx;
+  box-sizing: border-box;
+}
+
+.wish-do-session .do-btn {
+  padding: 10rpx 70rpx;
+  border: 1px solid #de9703;
+  border-radius: 6rpx;
+  box-sizing: 1px solid #de9703;
 }
 
 .summary {
@@ -50,10 +104,79 @@ page {
   margin-bottom: 30rpx;
 }
 
-.content {
+.summary .content {
   color: #555;
-  font-size: 20rpx;
-  padding: 2em;
+  font-size: 25rpx;
+  padding: 10rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block; 
+}
+
+.summary .content-auto {
+  height: auto;
+}
+
+.summary .content-3line {
+  height: 90rpx;
+}
+
+.summary .extension {
+  height: 28rpx;
+  font-size: 25rpx;
+  color: #32cd32;
+}
+
+.directors-casts {
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 30rpx;
+  margin: 20rpx 0;
+}
+
+.directors-casts .dc-title {
+  /* color: #9e9e9e; */
+  font-size: 30rpx;
+  margin-left: 50rpx;
+}
+
+.dc-scroll {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.dc-wrapper {
+  display: inline-block;
+}
+
+.dc-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.dc-wrapper .dc-image {
+  width: 180rpx;
+  height: 240rpx;
+  margin: 10rpx 20rpx;
+}
+
+.dc-wrapper .dc-image:first-child {
+  margin-left: 0;
+}
+
+.dc-wrapper .dc-image:last-child {
+  margin-right: 0;
+}
+
+.dc-wrapper .dc-name {
+  width: 140rpx;
+  color: #4a4a4a;
+  font-size: 22rpx;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .background {

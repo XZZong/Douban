@@ -21,6 +21,7 @@
             <view class='movie-item'>
               <image src='{{item.images.large}}' mode='aspectFill'/>
               <text>{{item.title}}</text>
+              <text style='color:#878787; font-size:30rpx;'>{{item.rating.average}}</text>
             </view>
           </navigator>
         </view>

@@ -44,4 +44,10 @@ function findOne (id) {
   });
 }
 
-module.exports = {find : find, findOne : findOne};
+function findCelebrity (id) {
+  return fetchApi('celebrity/' + id).then(function (res) {
+    return res.data;
+  });
+}
+
+module.exports = {find : find, findOne : findOne, findCelebrity: findCelebrity};

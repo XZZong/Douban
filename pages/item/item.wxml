@@ -2,16 +2,55 @@
   <loading hidden='{{!loading}}'>加载中...</loading>
   <image wx:if='{{movie.images.large}}'class="background" src="{{movie.images.large}}" mode="aspectFill"/>
   <scroll-view scroll-y="true"> 
-    <view class="meta">
+    <navigator url='../poster/poster?posterUrl={{movie.images.large}}'>
       <image class="poster" src="{{movie.images.large}}" mode="aspectFit"/>
-      <text class="title">{{movie.title}}({{movie.year}})</text>
-      <text class="info">评分：{{movie.rating.average}}</text>
-      <text class="info">导演：<block wx:for='{{movie.directors}}' wx:key='id'> {{item.name}} </block></text>
-      <text class="info">主演：<block wx:for='{{movie.casts}}' wx:key='id'> {{item.name}} </block></text>
+    </navigator>
+    <text class="title">{{movie.title}}({{movie.year}})</text>
+    <view class="meta">
+      <view class='movie'>
+        <text class="info">类型：{{movie.genres}}</text>
+        <text class="info">导演：<block wx:for='{{movie.directors}}' wx:key='id'> {{item.name}} </block></text>
+        <text class='info'>国家：{{movie.countries}}</text>
+      </view>
+      <view class='rating'>
+        <text class='average'>{{movie.rating.average}}</text>
+        <text class='ratings-count'>{{movie.ratings_count}}人</text>
+      </view>
+    </view>
+    <view class='wish-do-session'>
+      <text class='wish-btn' catchtap='handleWishtap'>想看</text>
+      <text class='do-btn' catchtap='handleDotap'>看过</text>
     </view>
     <view class="summary">
-      <text class="label">摘要：</text>
-      <text class="content">{{movie.summary}}</text>
+      <text class="label">剧情简介：</text>
+      <text class="content {{showAll ? 'content-auto' : 'content-3line'}}">{{movie.summary}}</text>
+      <block wx:if='{{showAll}}'>
+        <text class='extension' bindtap='handleIntensiontap'>收起</text>
+      </block>
+      <block wx:else>
+        <text class='extension' bindtap='handleExtensiontap'>展开</text>
+      </block>
+    </view>
+    <view class='directors-casts'>
+      <view class='dc-title'>影人: </view>
+      <scroll-view class='dc-scroll' scroll-x='true'>
+        <block wx:for='{{movie.directors}}' wx:key='id'>
+          <navigator class='dc-wrapper' url='../celebrity/celebrity?id={{item.id}}&avatar={{item.avatars.large}}'>
+            <view class='dc-content'>
+              <image class='dc-image' src='{{item.avatars.small}}'/>
+              <text class='dc-name'>{{item.name}}</text>
+            </view>
+          </navigator>
+        </block>
+        <block wx:for='{{movie.casts}}' wx:key='id'>
+          <navigator class='dc-wrapper' url='../celebrity/celebrity?id={{item.id}}&avatar={{item.avatars.large}}'>
+            <view class='dc-content'>
+              <image class='dc-image' src='{{item.avatars.small}}'/>
+              <text class='dc-name'>{{item.name}}</text>
+            </view>
+          </navigator>
+        </block>
+      </scroll-view>
     </view>
   </scroll-view> 
 </view>

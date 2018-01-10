@@ -1,0 +1,7 @@
+<view class="poster-scroll" style="width: {{windowWidth}}px; height:{{windowHeight}}px">
+  <view class="poster-wrapper">
+    <view class="poster-content">
+      <image class="poster" style="width: {{windowWidth}}px; height:{{windowHeight}}px" src="{{poster}}"></image>
+    </view>
+  </view>
+</view>

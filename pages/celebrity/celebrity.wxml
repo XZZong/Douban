@@ -1,0 +1,39 @@
+<!--pages/celebrity/celebrity.wxml-->
+<view class="container">
+  <navigator class="session-poster session-poster-spacing" url='../poster/poster?posterUrl={{avatar}}'>
+    <image class="poster" src="{{avatar}}"/>
+  </navigator>
+  <view class="summary-session">
+    <view class="celebrity-summary">
+      <text class="name">{{celebrity.name}}</text>
+      <text class="country">出生地：{{celebrity.born_place}}</text>
+      <text class="birth">更多中文名：{{celebrity.aka}}</text>
+      <text class="role">英文名: {{celebrity.name_en}}</text>
+    </view>
+  </view>
+  <view class="desc-session">
+    <text class="title">简介</text>
+    <view class="desc-wrapper">
+      <text class="desc-content {{showAllDesc ? 'desc-content-auto' : 'desc-content-3line'}}">{{celebrity.summary}}公开API不包含此条内容，去豆瓣电影查看详情</text>
+      <block wx:if='{{showAll}}'>
+        <text class='extension' bindtap='handleIntensiontap'>收起</text>
+      </block>
+      <block wx:else>
+        <text class='extension' bindtap='handleExtensiontap'>展开</text>
+      </block>
+    </view>
+  </view>
+  <view class="directors-casts">
+    <text class="dc-title">代表作品</text>
+    <scroll-view class="dc-scroll" scroll-x="true">
+      <block wx:for="{{celebrity.works}}" wx:for-item="item" wx:key='id'>
+        <navigator class='dc-wrapper' url='../item/item?id={{item.subject.id}}'>
+          <view class='dc-content'>
+            <image class='dc-image' src='{{item.subject.images.small}}'/>
+            <text class='dc-name'>{{item.subject.title}}</text>
+          </view>
+        </navigator>
+      </block>
+    </scroll-view>
+  </view>
+</view>

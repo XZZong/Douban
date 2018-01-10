@@ -1,11 +1,13 @@
 {
   "pages": [
-    "pages/splash/splash",
     "pages/board/board",
     "pages/search/search",
     "pages/profile/profile",
     "pages/item/item",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/splash/splash",
+    "pages/poster/poster",
+    "pages/celebrity/celebrity"
   ],
   "window": {
     "backgroundTextStyle": "light",

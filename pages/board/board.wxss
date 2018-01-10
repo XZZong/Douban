@@ -17,8 +17,8 @@ page {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  font-size: 40rpx;
-  margin: 40rpx 0;
+  font-size: 35rpx;
+  margin: 20rpx 0;
   padding: 10rpx;
 }
 
@@ -38,12 +38,12 @@ page {
 }
 
 .board-item .content {
-  height: 320rpx;
+  height: 350rpx;
 }
 .board-item .content .inner {
   display: flex;
   flex-direction: row;
-  height: 320rpx;
+  height: 350rpx;
   width: 900rpx;
 }
 .board-item .content .inner .movie-item {
