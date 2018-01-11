@@ -51,20 +51,13 @@ App({
         },
         success: function (res) {
           // success    
-          console.log(res);
           var city = res.data.result.addressComponent.city;
-          _this.data.currentCity = city;
-          console.log(city);
-          // _this.setData({currentCity: city});
+          _this.data.currentCity = city.replace('市', '');
         },
         fail: function () {
           _this.data.currentCity = '获取定位失败';
-          // _this.setData({ currentCity: "获取定位失败" });
         }
       })
     })
-  },
-
-  getCity: function getCity (latitude, longitude) {
   }
 })
