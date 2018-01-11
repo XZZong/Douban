@@ -24,7 +24,7 @@ App({
   data: {
     name: 'Douban Movie',
     version: '0.1.0',
-    currentCity: '北京'
+    currentCity: '武汉'
   },
   // WeChat API
   wechat: wechat,
@@ -42,14 +42,29 @@ App({
     wechat.getLocation().then(function (res) {
       var latitude = res.latitude,
         longitude = res.longitude;
+      
+      wx.request({
+        url: 'https://api.map.baidu.com/geocoder/v2/?ak=fCjOI0cVuMTKZgjLBeuUFpuZpgO0GoiB&location=' + latitude + ',' + longitude + '&output=json',
+        data: {},
+        header: {
+          'Content-Type': 'application/json'
+        },
+        success: function (res) {
+          // success    
+          console.log(res);
+          var city = res.data.result.addressComponent.city;
+          _this.data.currentCity = city;
+          console.log(city);
+          // _this.setData({currentCity: city});
+        },
+        fail: function () {
+          _this.data.currentCity = '获取定位失败';
+          // _this.setData({ currentCity: "获取定位失败" });
+        }
+      })
+    })
+  },
 
-      return baidu.getCityName(latitude, longitude);
-    }).then(function (name) {
-      _this.data.currentCity = name.replace('市', '');
-      console.log('currentCity : ' + _this.data.currentCity);
-    }).catch(function (err) {
-      _this.data.currentCity = '北京';
-      console.error(err);
-    });
+  getCity: function getCity (latitude, longitude) {
   }
 })
